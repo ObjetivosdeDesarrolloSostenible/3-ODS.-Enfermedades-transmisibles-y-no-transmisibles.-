@@ -1,0 +1,13 @@
+body {
+  background-color: lightblue; /* Color de fondo */
+  font-family: sans-serif;
+  text-align: center;
+}
+h1 {
+  color: darkblue;
+}
+button {
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
