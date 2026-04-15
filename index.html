@@ -1,27 +1,180 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<TITLE>Enfermedades Transmsibles y No Transmisibles</TITLE>    
-    <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoSalud: Tu Cuerpo, Tu Planeta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d6a4f;
+            --light-green: #95d5b2;
+            --soft-white: #f8fdfa;
+            --accent-mint: #40916c;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--soft-white);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Header & Hero --- */
+        header {
+            background: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* --- Secciones --- */
+        section {
+            padding: 80px 10% 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-bottom: 5px solid var(--light-green);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 15px;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        h2 {
+            color: var(--primary-green);
+            text-align: center;
+            font-size: 2.5rem;
+        }
+
+        /* --- Interactividad (Quiz) --- */
+        #quiz-box {
+            background: var(--light-green);
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn-action {
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-action:hover {
+            background-color: #1b4332;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #f0f7f4;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
 
     <header>
-        <h1>Salud en la juventud</h1>
+        <h1>Level Up Your Life 🌿</h1>
+        <p class="subtitle">Hackea tu salud, domina el ODS 3 y protege tu futuro.</p>
     </header>
-    
-    <h1>¿Qué son los ODS?</h1>
-    <p>Introducción</p>
 
-            <section>
-            <h2>Enfermedades Transmisibles</h2>
-            <p>Aquí irá el contenido principal.</p>
-        </section>
-        <h2>Enfermedades no transmisibles</h2>
-        <p>Contenido principal</p>
+    <section id="info">
+        <h2>¿Qué está pasando con nuestra salud?</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&q=80&w=500" alt="Microscopio">
+                <h3>Transmisibles: El "Virus" Real</h3>
+                <p>Desde gripes hasta nuevas amenazas. Se pasan de persona a persona, pero tú tienes el firewall.</p>
+                <ul>
+                    <li>Lávate las manos (básico, pero efectivo).</li>
+                    <li>Mantén tus vacunas al día.</li>
+                    <li>Usa protección en tus relaciones.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=500" alt="Yoga y vida sana">
+                <h3>No Transmisibles: El "Lag" del Cuerpo</h3>
+                <p>Diabetes, problemas del corazón o estrés. No se contagian, se "cultivan" con malos hábitos.</p>
+                <ul>
+                    <li>Muévete 30 min al día.</li>
+                    <li>Menos procesados, más comida real.</li>
+                    <li>Duerme como si tu batería dependiera de ello.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="interactive">
+        <div id="quiz-box">
+            <h2>¿Qué tan "Green" es tu estilo de vida? 🔋</h2>
+            <p id="quiz-text">Haz clic en el botón para evaluar tu nivel de prevención hoy.</p>
+            <button class="btn-action" onclick="checkStatus()">¡Evaluar mi energía!</button>
+            <p id="result" style="margin-top: 20px; font-weight: bold; color: var(--primary-green);"></p>
+        </div>
+    </section>
 
     <footer>
-        <p></p>
+        <p>Hecho con 🌱 para la Generación Z - Objetivo de Desarrollo Sostenible 3: Salud y Bienestar.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function checkStatus() {
+            const messages = [
+                "¡Estás en modo Leyenda! Sigue cuidando tu alimentación y deporte.",
+                "Nada mal, pero ese sueño de 4 horas no te ayuda. ¡A descansar!",
+                "¡Alerta de batería baja! Bebe más agua y deja los refrescos un rato.",
+                "¡Nivel Maestro! Compartir salud es el siguiente paso."
+            ];
+            const random = Math.floor(Math.random() * messages.length);
+            document.getElementById('result').innerText = messages[random];
+            document.getElementById('quiz-text').innerText = "¡Resultado obtenido!";
+        }
+    </script>
+
 </body>
 </html>
