@@ -1,126 +1,22 @@
-/* Importación de tipografía moderna */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-:root {
-    --verde-ods: #2ecc71;
-    --azul-ods: #3498db;
-    --blanco: #ffffff;
-    --fondo: #f4f7f6;
-    --texto: #2c3e50;
-    --sombra: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--fondo);
-    color: var(--texto);
-    line-height: 1.6;
-}
-
-/* Encabezado Estilo "Glassmorphism" */
-header {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 1rem 5%;
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: var(--sombra);
-    z-index: 1000;
-}
-
-header h1 {
-    font-size: 1.5rem;
-    color: var(--verde-ods);
-    font-weight: 600;
-}
-
-/* Hero Section: Atractivo visual */
-.hero {
-    padding: 100px 10%;
-    text-align: center;
-    background: linear-gradient(135deg, #e0f2f1 0%, #e1f5fe 100%);
-    border-radius: 0 0 50px 50px;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--texto);
-}
-
-/* Contenedor de Tarjetas (Enfermedades) */
-.container {
-    padding: 50px 10%;
+.galeria {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    /* Crea 3 columnas de igual tamaño */
+    grid-template-columns: repeat(3, 1fr); 
+    /* Espacio entre las imágenes */
+    gap: 15px; 
+    padding: 20px;
 }
 
-.card {
-    background: var(--blanco);
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: var(--sombra);
-    transition: transform 0.3s ease;
-    border-bottom: 5px solid transparent;
+.galeria img {
+    width: 100%;    /* La imagen ocupa el ancho de su columna */
+    height: auto;   /* Mantiene la proporción */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    object-fit: cover;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card.transmisible {
-    border-color: var(--azul-ods);
-}
-
-.card.no-transmisible {
-    border-color: var(--verde-ods);
-}
-
-.card h3 {
-    margin-bottom: 15px;
-    font-size: 1.4rem;
-}
-
-/* Botones Modernos */
-.btn {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: var(--verde-ods);
-    color: white;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: background 0.3s ease, box-shadow 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn:hover {
-    background-color: #27ae60;
-    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
-}
-
-/* Footer ODS 3 */
-footer {
-    text-align: center;
-    padding: 40px;
-    background-color: var(--texto);
-    color: var(--blanco);
-    margin-top: 50px;
-}
-
-/* Responsividad para móviles */
-@media (max-width: 768px) {
-    .hero h2 { font-size: 1.8rem; }
-    .container { padding: 20px 5%; }
+/* Ajuste para celulares: que se vea en una sola columna */
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
 }
