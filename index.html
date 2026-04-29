@@ -4,59 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BioHack: Tu Cuerpo, Tus Reglas</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <h1>BioHack<span>.</span></h1>
-        <p class="tagline">Lo que nadie te explica sobre tu salud, sin rollos.</p>
+        <nav aria-label="Navegación principal">
+            <h1>BioHack<span aria-hidden="true">.</span></h1>
+            <p class="tagline">Lo que nadie te explica sobre tu salud, sin rollos.</p>
+        </nav>
     </header>
 
     <main class="container">
-        <section class="grid">
+        <section class="grid" aria-labelledby="section-titles">
+            <h2 id="section-titles" class="sr-only">Categorías de Salud</h2>
             
-            <div class="card trans">
+            <article class="card trans">
                 <div class="overlay">
-                    <h2>Enemigos Invisibles</h2>
+                    <h3>Enemigos Invisibles</h3>
                     <p>Virus, bacterias y todo lo que se contagia. Aprende a protegerte.</p>
                     <a href="transmisibles.html" class="btn">Ver Enfermedades Transmisibles</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="card no-trans">
+            <article class="card no-trans">
                 <div class="overlay">
-                    <h2>Tu Estilo de Vida</h2>
+                    <h3>Tu Estilo de Vida</h3>
                     <p>No se pegan, pero pesan. Lo que comes y haces define tu futuro.</p>
                     <a href="no-transmisibles.html" class="btn">Ver Enfermedades No Transmisibles</a>
                 </div>
-            </div>
+            </article>
+        </section>
 
+        <hr>
+
+        <section class="galeria-container">
+            <h2>Galería de Imágenes</h2>
+            <div class="galeria">
+                <figure>
+                    <img src="img/imagen1.jpg" alt="Primer plano de células bajo microscopio" loading="lazy">
+                    <figcaption>Muestra celular 01</figcaption>
+                </figure>
+                
+                <figure>
+                    <img src="img/imagen2.jpg" alt="Ilustración de una dieta balanceada" loading="lazy">
+                    <figcaption>Nutrición óptima</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/imagen3.jpg" alt="Persona realizando ejercicio cardiovascular" loading="lazy">
+                    <figcaption>Actividad física</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/imagen4.jpg" alt="Esquema de la estructura de un virus" loading="lazy">
+                    <figcaption>Estructura viral</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/imagen5.jpg" alt="Representación de la cadena de ADN" loading="lazy">
+                    <figcaption>Genética</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="img/imagen6.jpg" alt="Cerebro humano iluminado representando salud mental" loading="lazy">
+                    <figcaption>Bienestar mental</figcaption>
+                </figure>
+            </div>
         </section>
     </main>
 
+    <footer>
+        <p>&copy; 2026 BioHack - Empoderando tu salud.</p>
+    </footer>
+
 </body>
 </html>
-<div><!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Mi Galería Simple</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <h1>Galería de Imágenes</h1>
-
-    <div class="galeria">
-        <img src="img/imagen1.jpg" alt="imagen1.jpg1">
-        <img src="img/imagen2.jpg" alt="Descripción 2">
-        <img src="img/imagen3.jpg" alt="Descripción 3">
-        <img src="img/imagen4.jpg" alt="Descripción 4">
-        <img src="img/imagen5.jpg" alt="Descripción 5">
-        <img src="img/imagen6.jpg" alt="Descripción 6">
-    </div>
-
-</body>
-</html></div>
