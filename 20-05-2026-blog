@@ -1,1 +1,289 @@
-ODS 3 Enfermedades transmisibles y no transmisibles 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog ODS 3: Salud y Bienestar</title>
+    <style>
+        /* Estilos Base - Enfoque en claridad y limpieza */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+ 
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #2c3e50;
+            background-color: #f4f7f6; /* Fondo verde-azulado muy claro y limpio */
+            line-height: 1.6;
+        }
+ 
+        /* Banner Superior con degrade Verde y Azul */
+        .header-banner {
+            background: linear-gradient(135deg, #1e4d2b, #2a6f97);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #8c6239; /* Línea de acento marrón tierra */
+            margin-bottom: 30px;
+        }
+ 
+        .header-banner h1 {
+            margin: 0;
+            font-size: 24pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+ 
+        .header-banner p {
+            margin: 10px 0 0 0;
+            font-size: 12pt;
+            color: #e2ece9;
+            font-style: italic;
+        }
+ 
+        /* Contenedor Principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+ 
+        /* Caja de Introducción */
+        .intro-box {
+            background-color: #ffffff;
+            border-left: 5px solid #2a6f97; /* Acento Azul */
+            padding: 15px 20px;
+            margin-bottom: 35px;
+            border-radius: 0 4px 4px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+ 
+        .intro-box p {
+            margin: 0;
+            font-size: 11pt;
+            color: #4a5568;
+        }
+ 
+        /* Títulos de las Secciones (Verde Obscuro) */
+        h2 {
+            font-size: 16pt;
+            color: #1e4d2b;
+            border-bottom: 2px solid #e2ece9;
+            padding-bottom: 5px;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+ 
+        /* Tarjetas de las Enfermedades */
+        .disease-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+ 
+        .disease-header {
+            border-bottom: 1px dashed #cbd5e1;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+ 
+        /* Nombre de la enfermedad en Azul Clínico */
+        .disease-name {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2a6f97;
+        }
+ 
+        /* Etiquetas informativas con tonos Marrones y Verdes suaves */
+        .disease-type-badge {
+            float: right;
+            font-size: 9pt;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            text-transform: uppercase;
+        }
+ 
+        .badge-transmisible {
+            background-color: #e6f4ea;
+            color: #137333;
+        }
+ 
+        .badge-no-transmisible {
+            background-color: #fef3c7;
+            color: #92400e; /* Tono marrón/ámbar */
+        }
+ 
+        .clear {
+            clear: both;
+        }
+ 
+        /* Subtítulos de Síntomas en Marrón Tierra */
+        .symptom-title {
+            font-weight: 600;
+            color: #8c6239;
+            margin-top: 10px;
+            margin-bottom: 6px;
+            font-size: 11pt;
+        }
+ 
+        ul {
+            margin: 0 0 10px 0;
+            padding-left: 20px;
+        }
+ 
+        li {
+            margin-bottom: 5px;
+            color: #4a5568;
+        }
+ 
+        /* Pie de página */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            border-top: 1px solid #e2ece9;
+            font-size: 10pt;
+            color: #718096;
+        }
+    </style>
+</head>
+<body>
+ 
+    <div class="container">
+        
+        <div class="header-banner">
+            <h1>Bitácora de Salud y Bienestar</h1>
+            <p>Monitoreo Clínico y Sintomatología • Compromiso ODS 3</p>
+        </div>
+ 
+        <div class="intro-box">
+            <p>
+                <strong>Espacio Informativo Escolar:</strong> Este registro técnico detalla exclusivamente las manifestaciones clínicas primarias y secundarias de diversas patologías de interés social, clasificadas según su mecanismo de transmisión.
+            </p>
+        </div>
+ 
+        <h2>1. Patologías Transmisibles</h2>
+        
+        <div class="disease-card">
+            <div class="disease-header">
+                <span class="disease-name">Gripe Estacional</span>
+                <span class="disease-type-badge badge-transmisible">Transmisible</span>
+                <div class="clear"></div>
+            </div>
+            <div class="symptom-title">Manifestaciones Clínicas Iniciales:</div>
+            <ul>
+                <li>Instauración abrupta de fiebre elevada y escalofríos generalizados.</li>
+                <li>Cefalea holocraneal de intensidad moderada a severa.</li>
+            </ul>
+            <div class="symptom-title">Manifestaciones Clínicas Secundarias:</div>
+            <ul>
+                <li>Mialgias intensas (dolor muscular) y postración física transitoria.</li>
+                <li>Tos seca persistente asociada a odinofagia (dolor de garganta) y congestión nasal.</li>
+            </ul>
+        </div>
+ 
+        <div class="disease-card">
+            <div class="disease-header">
+                <span class="disease-name">Dengue Clásico</span>
+                <span class="disease-type-badge badge-transmisible">Transmisible</span>
+                <div class="clear"></div>
+            </div>
+            <div class="symptom-title">Manifestaciones Clínicas Iniciales:</div>
+            <ul>
+                <li>Hipertermia aguda (fiebre alta de inicio repentino).</li>
+                <li>Dolor retroocular característico (localizado detrás de los ojos).</li>
+            </ul>
+            <div class="symptom-title">Manifestaciones Clínicas Secundarias:</div>
+            <ul>
+                <li>Artralgias y mialgias severas (dolor intenso en articulaciones y músculos).</li>
+                <li>Exantema maculopapular (erupciones o manchas rojizas en la piel) y náuseas.</li>
+            </ul>
+        </div>
+ 
+        <div class="disease-card">
+            <div class="disease-header">
+                <span class="disease-name">Tuberculosis Pulmonar</span>
+                <span class="disease-type-badge badge-transmisible">Transmisible</span>
+                <div class="clear"></div>
+            </div>
+            <div class="symptom-title">Manifestaciones Clínicas Iniciales:</div>
+            <ul>
+                <li>Tos productiva crónica con una duración superior a tres semanas.</li>
+                <li>Hemoptisis eventual (presencia de rasgos de sangre en la expectoración).</li>
+            </ul>
+            <div class="symptom-title">Manifestaciones Clínicas Secundarias:</div>
+            <ul>
+                <li>Diaforesis nocturna (sudoración profusa durante el periodo de sueño).</li>
+                <li>Astenia (debilidad generalizada) y pérdida ponderal involuntaria de peso.</li>
+            </ul>
+        </div>
+ 
+        <h2>2. Patologías No Transmisibles (Crónicas)</h2>
+ 
+        <div class="disease-card">
+            <div class="disease-header">
+                <span class="disease-name">Diabetes Mellitus Tipo 2</span>
+                <span class="disease-type-badge badge-no-transmisible">No Transmisible</span>
+                <div class="clear"></div>
+            </div>
+            <div class="symptom-title">Manifestaciones Clínicas Iniciales:</div>
+            <ul>
+                <li>Polidipsia (incremento anormal y constante de la necesidad de ingerir líquidos).</li>
+                <li>Poliuria (aumento notable en la frecuencia y volumen de las micciones).</li>
+            </ul>
+            <div class="symptom-title">Manifestaciones Clínicas Secundarias:</div>
+            <ul>
+                <li>Polifagia (sensación de apetito desmedido o ingesta exacerbada de alimentos).</li>
+                <li>Visión borrosa transitoria y fatiga crónica persistente.</li>
+            </ul>
+        </div>
+ 
+        <div class="disease-card">
+            <div class="disease-header">
+                <span class="disease-name">Hipertensión Arterial Sistémica</span>
+                <span class="disease-type-badge badge-no-transmisible">No Transmisible</span>
+                <div class="clear"></div>
+            </div>
+            <div class="symptom-title">Manifestaciones Clínicas Iniciales:</div>
+            <ul>
+                <li>Frecuentemente cursa de manera asintomática durante las etapas tempranas.</li>
+            </ul>
+            <div class="symptom-title">Manifestaciones Clínicas Avanzadas o de Alerta:</div>
+            <ul>
+                <li>Cefalea pulsátil, predominantemente localizada en la región occipital de la cabeza.</li>
+                <li>Acúfenos (percepción de zumbidos en los oídos) y fosfenos (visión de destellos luminosos).</li>
+                <li>Disnea de esfuerzo (dificultad para respirar al realizar actividades).</li>
+            </ul>
+        </div>
+ 
+        <div class="disease-card">
+            <div class="disease-header">
+                <span class="disease-name">Asma Bronquial</span>
+                <span class="disease-type-badge badge-no-transmisible">No Transmisible</span>
+                <div class="clear"></div>
+            </div>
+            <div class="symptom-title">Manifestaciones Clínicas Crónicas:</div>
+            <ul>
+                <li>Sibilancias espiratorias (silbidos agudos audibles en el pecho durante la espiración).</li>
+                <li>Disnea paroxística (sensación de falta de aire por episodios repetitivos).</li>
+            </ul>
+            <div class="symptom-title">Manifestaciones Clínicas Secundarias:</div>
+            <ul>
+                <li>Sensación de opresión o rigidez en la región torácica.</li>
+                <li>Tos de predominio seco, acentuada durante la noche o ante estímulos ambientales.</li>
+            </ul>
+        </div>
+ 
+        <div class="footer">
+            <p>Proyecto Escolar Informativo • Concienciación sobre el ODS 3: Salud y Bienestar</p>
+        </div>
+    </div>
+ 
+</body>
+</html>
