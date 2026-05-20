@@ -1,85 +1,122 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioHack: Tu Cuerpo, Tus Reglas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <nav aria-label="Navegación principal">
-            <h1>BioHack<span aria-hidden="true">.</span></h1>
-            <p class="tagline">Hackea tu salud, domina tu futuro. ODS 3 en acción.</p>
-        </nav>
-    </header>
-
-    <main class="container">
-        <section class="grid" aria-labelledby="section-titles">
-            <h2 id="section-titles" class="sr-only">Categorías de Salud</h2>
-            
-            <article class="card trans">
-                <div class="overlay">
-                    <h3>Enemigos Invisibles</h3>
-                    <p>Virus, bacterias y lo que se contagia. Aprende a blindar tu sistema.</p>
-                    <a href="transmisibles.html" class="btn btn-trans">
-                         Ver Enfermedades Transmisibles
-                    </a>
-                </div>
-            </article>
-
-            <article class="card no-trans">
-                <div class="overlay">
-                    <h3>Tu Estilo de Vida</h3>
-                    <p>No se pegan, se construyen. Hábitos que te hacen invencible o te frenan.</p>
-                    <a href="no-transmisibles.html" class="btn btn-no-trans">
-                        Ver Enfermedades No Transmisibles
-                    </a>
-                </div>
-            </article>
-        </section>
-
-        <hr class="separator">
-
-        <section class="galeria-container">
-            <h2>Galería BioHack</h2>
-            <div class="galeria">
-                <figure>
-                    <img src="img/imagen1.jpg" alt="Primer plano de células bajo microscopio" loading="lazy">
-                    <figcaption>Muestra celular 01</figcaption>
-                </figure>
-                <figure>
-                    <img src="img/imagen2.jpg" alt="Ilustración de una dieta balanceada" loading="lazy">
-                    <figcaption>Nutrición óptima</figcaption>
-                </figure>
-                <figure>
-                    <img src="img/imagen3.jpg" alt="Persona realizando ejercicio cardiovascular" loading="lazy">
-                    <figcaption>Actividad física</figcaption>
-                </figure>
-                <figure>
-                    <img src="img/imagen4.jpg" alt="Esquema de la estructura de un virus" loading="lazy">
-                    <figcaption>Estructura viral</figcaption>
-                </figure>
-                <figure>
-                    <img src="img/imagen5.jpg" alt="Representación de la cadena de ADN" loading="lazy">
-                    <figcaption>Genética</figcaption>
-                </figure>
-                <figure>
-                    <img src="img/imagen6.jpg" alt="Cerebro humano iluminado representando salud mental" loading="lazy">
-                    <figcaption>Bienestar mental</figcaption>
-                </figure>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 BioHack - Empoderando tu salud para un mundo sostenible.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+ <html lang="es">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>BioHack: Tu Cuerpo, Tus Reglas</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="style.css">
+ <style>
+     /* Estilos rápidos para que el menú superior se vea ordenado */
+     .nav-container {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 10px 20px;
+     }
+     .nav-links {
+         list-style: none;
+         display: flex;
+         gap: 20px;
+         margin: 0;
+         padding: 0;
+     }
+     .nav-links a {
+         color: #ffffff;
+         text-decoration: none;
+         font-weight: bold;
+         padding: 5px 10px;
+         border-radius: 4px;
+         transition: background 0.3s;
+     }
+     .nav-links a:hover {
+         background-color: rgba(255, 255, 255, 0.2);
+     }
+ </style>
+ </head>
+ <body>
+ 
+ <header>
+ <nav aria-label="Navegación principal" class="nav-container">
+ <div>
+     <h1>BioHack<span aria-hidden="true">.</span></h1>
+     <p class="tagline">Hackea tu salud, domina tu futuro. ODS 3 en acción.</p>
+ </div>
+ <!-- MENÚ CONECTADO AL BLOG -->
+ <ul class="nav-links">
+     <li><a href="index.html">Inicio</a></li>
+     <li><a href="20-05-2026-blog.html">Blog</a></li>
+ </ul>
+ </nav>
+ </header>
+ 
+ <main class="container">
+ <section class="grid" aria-labelledby="section-titles">
+ <h2 id="section-titles" class="sr-only">Categorías de Salud</h2>
+ 
+ <article class="card trans">
+ <div class="overlay">
+ <h3>Enemigos Invisibles</h3>
+ <p>Virus, bacterias y lo que se contagia. Aprende a blindar tu sistema.</p>
+ <a href="transmisibles.html" class="btn btn-trans">
+ Ver Enfermedades Transmisibles
+ </a>
+ </div>
+ </article>
+ 
+ <article class="card no-trans">
+ <div class="overlay">
+ <h3>Tu Estilo de Vida</h3>
+ <p>No se pegan, se construyen. Hábitos que te hacen invencible o te frenan.</p>
+ <a href="no-transmisibles.html" class="btn btn-no-trans">
+ Ver Enfermedades No Transmisibles
+ </a>
+ </div>
+ </article>
+ </section>
+ 
+ <hr class="separator">
+ 
+ <section class="galeria-container">
+ <h2>Galería BioHack</h2>
+ <div class="galeria">
+ <figure>
+ <img src="img/imagen1.jpg" alt="Primer plano de células bajo microscopio" loading="lazy">
+ <figcaption>Muestra celular 01</figcaption>
+ </figure>
+ <figure>
+ <img src="img/imagen2.jpg" alt="Ilustración de una dieta balanceada" loading="lazy">
+ <figcaption>Nutrición óptima</figcaption>
+ </figure>
+ <figure>
+ <img src="img/imagen3.jpg" alt="Persona realizando ejercicio cardiovascular" loading="lazy">
+ <figcaption>Actividad física</figcaption>
+ </figure>
+ <figure>
+ <img src="img/imagen4.jpg" alt="Esquema de la estructura de un virus" loading="lazy">
+ <figcaption>Estructura viral</figcaption>
+ </figure>
+ <figure>
+ <img src="img/imagen5.jpg" alt="Representación de la cadena de ADN" loading="lazy">
+ <figcaption>Genética</figcaption>
+ </figure>
+ <figure>
+ <img src="img/imagen6.jpg" alt="Cerebro humano iluminado representando salud mental" loading="lazy">
+ <figcaption>Bienestar mental</figcaption>
+ </figure>
+ </div>
+ </section>
+ </main>
+ 
+ <footer>
+ <p>&copy; 2026 BioHack - Empoderando tu salud para un mundo sostenible.</p>
+ </footer>
+ 
+ <script src="script.js"></script>
+ </body>
+ </html>
+ 
