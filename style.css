@@ -4,8 +4,8 @@
     --amarillo-acento: #F2CC8F;
     --cafe-oscuro: #3D3125;
     --blanco-hueso: #F4F1DE;
-    --transmisibles-bg: url('img/microscopio-bg.jpg'); /* Sugerencia de imagen de fondo */
-    --no-transmisibles-bg: url('img/lifestyle-bg.jpg'); /* Sugerencia de imagen de fondo */
+    --transmisibles-bg: url('img/microscopio-bg.jpg'); 
+    --no-transmisibles-bg: url('img/lifestyle-bg.jpg'); 
 }
 
 body {
@@ -51,12 +51,11 @@ h1 span { color: var(--verde-claro); }
 
 .card:hover { transform: translateY(-10px); }
 
-/* Estilos específicos para las tarjetas de categorías */
-.trans { background-color: var(--verde-primario); } /* Aquí iría la imagen de virus/bacterias */
-.no-trans { background-color: var(--cafe-oscuro); } /* Aquí iría la imagen de gym/comida */
+.trans { background-color: var(--verde-primario); } 
+.no-trans { background-color: var(--cafe-oscuro); } 
 
 .overlay {
-    background: rgba(61, 49, 37, 0.85); /* Café oscuro con transparencia */
+    background: rgba(61, 49, 37, 0.85); 
     padding: 1.5rem;
     width: 100%;
     color: white;
