@@ -3,25 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog ODS 3: Salud y Bienestar</title>
+    <title>BioHack: ODS 3 - Salud y Bienestar</title>
     <style>
         *, *::before, *::after { box-sizing: border-box; }
-        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; color: #2c3e50; background-color: #f4f7f6; line-height: 1.6; }
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
+            color: #334155; 
+            background-color: #f8fafc; 
+            line-height: 1.6; 
+        }
         
-        /* Menú de navegación integrado en el blog */
+        /* Menú de navegación minimalista */
         .blog-nav {
-            background-color: #1e4d2b;
-            padding: 10px 20px;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
         .nav-container h2 {
-            color: #ffffff;
+            color: #047857; /* Verde ODS 3 */
             margin: 0;
             font-size: 14pt;
             border: none;
@@ -30,107 +41,204 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 15px;
             margin: 0;
             padding: 0;
         }
         .nav-links a {
-            color: #ffffff;
+            color: #64748b;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 10pt;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background 0.3s;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
         }
-        .nav-links a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+        .nav-links a:hover, .nav-links a.active {
+            color: #047857;
+            background-color: #f0fdf4;
         }
 
-        .header-banner { background: linear-gradient(135deg, #1e4d2b, #2a6f97); color: #ffffff; padding: 30px 20px; text-align: center; border-bottom: 4px solid #8c6239; margin-bottom: 25px; }
-        .header-banner h1 { margin: 0; font-size: 22pt; font-weight: 700; }
-        .header-banner p { margin: 8px 0 0 0; font-size: 11pt; color: #e2ece9; font-style: italic; }
-        .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-        .intro-box { background-color: #ffffff; border-left: 5px solid #2a6f97; padding: 15px 20px; margin-bottom: 30px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-        h2 { font-size: 15pt; color: #1e4d2b; border-bottom: 2px solid #e2ece9; padding-bottom: 5px; margin-top: 30px; }
-        .disease-card { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 16px; margin-bottom: 18px; box-shadow: 0 1px 3px rgba(0,0,0,0.02); }
-        .disease-header { border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px; margin-bottom: 10px; }
-        .disease-name { font-size: 13pt; font-weight: bold; color: #2a6f97; }
-        .disease-type-badge { float: right; font-size: 8.5pt; font-weight: 600; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; }
-        .badge-transmisible { background-color: #e6f4ea; color: #137333; }
-        .badge-no-transmisible { background-color: #fef3c7; color: #92400e; }
+        /* Contenedor Principal */
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Banner de Encabezado Limpio */
+        .header-banner { 
+            text-align: center; 
+            margin-bottom: 40px; 
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .header-banner h1 { margin: 0; font-size: 26pt; font-weight: 700; color: #1e293b; }
+        .header-banner p { margin: 10px 0 0 0; font-size: 12pt; color: #64748b; font-style: italic; }
+        
+        /* Estilos de Secciones y Control de Vista */
+        section { display: none; }
+        section.active-section { display: block; }
+
+        /* Cuadro de Introducción (Inicio) */
+        .intro-box { 
+            background-color: #ffffff; 
+            border-left: 4px solid #2563eb; /* Azul para acento */
+            padding: 25px; 
+            margin-bottom: 30px; 
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+        }
+        .intro-box h3 { margin-top: 0; color: #1e293b; font-size: 14pt; }
+        .intro-box p { margin-bottom: 15px; color: #475569; text-align: justify; }
+
+        /* Tarjetas del Blog */
+        h2 { font-size: 16pt; color: #047857; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 40px; }
+        .disease-card { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
+        .disease-header { border-bottom: 1px dashed #e2e8f0; padding-bottom: 8px; margin-bottom: 12px; }
+        .disease-name { font-size: 14pt; font-weight: bold; color: #1e293b; }
+        .disease-type-badge { float: right; font-size: 8pt; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-transmisible { background-color: #d1fae5; color: #065f46; }
+        .badge-no-transmisible { background-color: #e0f2fe; color: #075985; } /* Azul suave para crónicas */
         .clear { clear: both; }
-        .symptom-title { font-weight: 600; color: #8c6239; margin-top: 8px; margin-bottom: 4px; font-size: 10pt; }
+        .symptom-title { font-weight: 600; color: #2563eb; margin-top: 12px; margin-bottom: 6px; font-size: 10.5pt; }
         ul { margin: 0; padding-left: 20px; }
-        li { margin-bottom: 4px; color: #4a5568; }
-        .footer { text-align: center; margin-top: 40px; padding: 15px 0; border-top: 1px solid #e2ece9; font-size: 9pt; color: #718096; }
+        li { margin-bottom: 6px; color: #475569; }
+        
+        /* Contenedor del Formulario incrustado */
+        .form-wrapper {
+            position: relative;
+            padding-bottom: 120%; /* Proporción para la altura del formulario */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .form-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Pie de página */
+        .footer { text-align: center; margin-top: 60px; padding: 20px 0; border-top: 1px solid #e2e8f0; font-size: 9.5pt; color: #94a3b8; }
     </style>
 </head>
 <body>
-    <!-- Barra de navegación para regresar a Inicio -->
+
     <nav class="blog-nav">
         <div class="nav-container">
-            <h2>BioHack Blog</h2>
+            <h2>BioHack</h2>
             <ul class="nav-links">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="20-05-2026-blog.html">Blog</a></li>
+                <li><a href="#inicio" id="btn-inicio" class="nav-btn active">Inicio</a></li>
+                <li><a href="#blog" id="btn-blog" class="nav-btn">Blog</a></li>
+                <li><a href="#formulario" id="btn-formulario" class="nav-btn">Formulario</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
-        <div class="header-banner">
+        <header class="header-banner">
             <h1>Bitácora de Salud y Bienestar</h1>
             <p>Monitoreo Clínico y Sintomatología • Compromiso ODS 3</p>
-        </div>
-        <div class="intro-box">
-            <p><strong>Espacio Informativo Escolar:</strong> Registro técnico de las manifestaciones clínicas primarias y secundarias de interés social.</p>
-        </div>
-        <h2>1. Patologías Transmisibles</h2>
-        <div class="disease-card">
-            <div class="disease-header"><span class="disease-name">Gripe Estacional</span><span class="disease-type-badge badge-transmisible">Transmisible</span><div class="clear"></div></div>
-            <div class="symptom-title">Síntomas Iniciales:</div>
-            <ul><li>Fiebre elevada y escalofríos generalizados.</li><li>Cefalea (dolor de cabeza) moderada a severa.</li></ul>
-            <div class="symptom-title">Síntomas Secundarios:</div>
-            <ul><li>Mialgias (dolor muscular) y cansancio físico.</li><li>Tos seca, dolor de garganta y congestión nasal.</li></ul>
-        </div>
-        <div class="disease-card">
-            <div class="disease-header"><span class="disease-name">Dengue Clásico</span><span class="disease-type-badge badge-transmisible">Transmisible</span><div class="clear"></div></div>
-            <div class="symptom-title">Síntomas Iniciales:</div>
-            <ul><li>Fiebre alta de inicio repentino.</li><li>Dolor característico detrás de los ojos.</li></ul>
-            <div class="symptom-title">Síntomas Secundarias:</div>
-            <ul><li>Dolor intenso en articulaciones y músculos.</li><li>Manchas rojas en la piel y náuseas.</li></ul>
-        </div>
-        <div class="disease-card">
-            <div class="disease-header"><span class="disease-name">Tuberculosis Pulmonar</span><span class="disease-type-badge badge-transmisible">Transmisible</span><div class="clear"></div></div>
-            <div class="symptom-title">Síntomas Iniciales:</div>
-            <ul><li>Tos con flema por más de tres semanas.</li><li>Expulsión de sangre al toser en casos avanzados.</li></ul>
-            <div class="symptom-title">Síntomas Secundarios:</div>
-            <ul><li>Sudoración excesiva por las noches.</li><li>Debilidad general y pérdida de peso sin causa aparente.</li></ul>
-        </div>
-        <h2>2. Patologías No Transmisibles (Crónicas)</h2>
-        <div class="disease-card">
-            <div class="disease-header"><span class="disease-name">Diabetes Mellitus Tipo 2</span><span class="disease-type-badge badge-no-transmisible">No Transmisible</span><div class="clear"></div></div>
-            <div class="symptom-title">Síntomas Iniciales:</div>
-            <ul><li>Necesidad constante de tomar mucha agua.</li><li>Aumento en la frecuencia de ir a orinar.</li></ul>
-            <div class="symptom-title">Síntomas Secundarios:</div>
-            <ul><li>Apetito desmedido y cansancio persistente.</li><li>Visión borrosa temporal.</li></ul>
-        </div>
-        <div class="disease-card">
-            <div class="disease-header"><span class="disease-name">Hipertensión Arterial Sistémica</span><span class="disease-type-badge badge-no-transmisible">No Transmisible</span><div class="clear"></div></div>
-            <div class="symptom-title">Síntomas Iniciales:</div>
-            <ul><li>Frecuentemente no presenta síntomas en etapas tempranas.</li></ul>
-            <div class="symptom-title">Síntomas de Alerta:</div>
-            <ul><li>Dolor de cabeza pulsante en la nuca.</li><li>Zumbido en los oídos y destellos luminosos en la vista.</li></ul>
-        </div>
-        <div class="disease-card">
-            <div class="disease-header"><span class="disease-name">Asma Bronquial</span><span class="disease-type-badge badge-no-transmisible">No Transmisible</span><div class="clear"></div></div>
-            <div class="symptom-title">Síntomas Crónicos:</div>
-            <ul><li>Silbidos en el pecho al respirar.</li><li>Dificultad respiratoria en forma de episodios.</li></ul>
-            <div class="symptom-title">Síntomas Secundarios:</div>
-            <ul><li>Sensación de opresión en el pecho.</li><li>Tos seca constante por las noches.</li></ul>
-        </div>
-        <div class="footer"><p>Proyecto Escolar • Concienciación sobre el ODS 3</p></div>
+        </header>
+
+        <section id="inicio" class="active-section">
+            <div class="intro-box">
+                <h3>El Desafío del ODS 3: Salud y Bienestar</h3>
+                <p>
+                    El Objetivo de Desarrollo Sostenible 3 (ODS 3) de las Naciones Unidas busca garantizar una vida sana y promover el bienestar de todas las personas en todas las edades. En el núcleo de este desafío global se encuentra la necesidad urgente de hacer frente a dos frentes clínicos distintos pero igualmente críticos: las <strong>enfermedades transmisibles</strong> y las <strong>enfermedades no transmisibles (crónicas)</strong>.
+                </p>
+                <p>
+                    Mientras que las patologías transmisibles (como el dengue o la tuberculosis) exigen robustos sistemas de vigilancia epidemiológica, saneamiento y vacunación masiva para frenar su propagación biológica; las patologías no transmisibles (como la diabetes o la hipertensión) demandan un cambio drástico en los estilos de vida, educación nutricional y diagnósticos tempranos. 
+                </p>
+                <p>
+                    <strong>BioHack: Tu Cuerpo, Tus Reglas</strong> nace como una herramienta digital interactiva para democratizar este conocimiento técnico, permitiéndote identificar síntomas clave y adoptar medidas preventivas efectivas. Navega a través de nuestras secciones para explorar el registro clínico o participar en nuestra evaluación comunitaria.
+                </p>
+            </div>
+        </section>
+
+        <section id="blog">
+            <h2>1. Patologías Transmisibles</h2>
+            <div class="disease-card">
+                <div class="disease-header"><span class="disease-name">Gripe Estacional</span><span class="disease-type-badge badge-transmisible">Transmisible</span><div class="clear"></div></div>
+                <div class="symptom-title">Síntomas Iniciales:</div>
+                <ul><li>Fiebre elevada y escalofríos generalizados.</li><li>Cefalea (dolor de cabeza) moderada a severa.</li></ul>
+                <div class="symptom-title">Síntomas Secundarios:</div>
+                <ul><li>Mialgias (dolor muscular) y cansancio físico.</li><li>Tos seca, dolor de garganta y congestión nasal.</li></ul>
+            </div>
+            <div class="disease-card">
+                <div class="disease-header"><span class="disease-name">Dengue Clásico</span><span class="disease-type-badge badge-transmisible">Transmisible</span><div class="clear"></div></div>
+                <div class="symptom-title">Síntomas Iniciales:</div>
+                <ul><li>Fiebre alta de inicio repentino.</li><li>Dolor característico detrás de los ojos.</li></ul>
+                <div class="symptom-title">Síntomas Secundarios:</div>
+                <ul><li>Dolor intenso en articulaciones y músculos.</li><li>Manchas rojas en la piel y náuseas.</li></ul>
+            </div>
+            <div class="disease-card">
+                <div class="disease-header"><span class="disease-name">Tuberculosis Pulmonar</span><span class="disease-type-badge badge-transmisible">Transmisible</span><div class="clear"></div></div>
+                <div class="symptom-title">Síntomas Iniciales:</div>
+                <ul><li>Tos con flema por más de tres semanas.</li><li>Expulsión de sangre al toser en casos avanzados.</li></ul>
+                <div class="symptom-title">Síntomas Secundarios:</div>
+                <ul><li>Sudoración excesiva por las noches.</li><li>Debilidad general y pérdida de peso sin causa aparente.</li></ul>
+            </div>
+
+            <h2>2. Patologías No Transmisibles (Crónicas)</h2>
+            <div class="disease-card">
+                <div class="disease-header"><span class="disease-name">Diabetes Mellitus Tipo 2</span><span class="disease-type-badge badge-no-transmisible">No Transmisible</span><div class="clear"></div></div>
+                <div class="symptom-title">Síntomas Iniciales:</div>
+                <ul><li>Necesidad constante de tomar mucha agua.</li><li>Aumento en la frecuencia de ir a orinar.</li></ul>
+                <div class="symptom-title">Síntomas Secundarios:</div>
+                <ul><li>Apetito desmedido y cansancio persistente.</li><li>Visión borrosa temporal.</li></ul>
+            </div>
+            <div class="disease-card">
+                <div class="disease-header"><span class="disease-name">Hipertensión Arterial Sistémica</span><span class="disease-type-badge badge-no-transmisible">No Transmisible</span><div class="clear"></div></div>
+                <div class="symptom-title">Síntomas Iniciales:</div>
+                <ul><li>Frecuentemente no presenta síntomas en etapas tempranas.</li></ul>
+                <div class="symptom-title">Síntomas de Alerta:</div>
+                <ul><li>Dolor de cabeza pulsante en la nuca.</li><li>Zumbido en los oídos y destellos luminosos en la vista.</li></ul>
+            </div>
+            <div class="disease-card">
+                <div class="disease-header"><span class="disease-name">Asma Bronquial</span><span class="disease-type-badge badge-no-transmisible">No Transmisible</span><div class="clear"></div></div>
+                <div class="symptom-title">Síntomas Crónicos:</div>
+                <ul><li>Silbidos en el pecho al respirar.</li><li>Dificultad respiratoria en forma de episodios.</li></ul>
+                <div class="symptom-title">Síntomas Secundarios:</div>
+                <ul><li>Sensación de opresión en el pecho.</li><li>Tos seca constante por las noches.</li></ul>
+            </div>
+        </section>
+
+        <section id="formulario">
+            <h2>Interacción y Evaluación</h2>
+            <div class="form-wrapper">
+                <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=OIIr_ImSX0Kxt7JwA9cR80atxRa8ZsNAg-Z2thv4EbJURUlJNVhOQVo2TVRPWllXRUlZNE9YSlRQQi4u&classId=d347d6ca-0d6b-4bba-8b37-8f30945a6ccd&assignmentId=1b12497b-212a-45f0-b002-8a1253d82b27&submissionId=2e4f0e81-0552-a5ea-5268-dd5c2ee1c1e9" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Proyecto Escolar BioHack • Concienciación sobre el ODS 3 • Desarrollado con HTML, CSS y JS</p>
+        </footer>
     </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('section');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault(); // Evita el salto brusco de ancla de URL
+
+                // 1. Remover clase activa de todos los botones
+                buttons.forEach(btn => btn.classList.remove('active'));
+                // 2. Añadir clase activa al botón presionado
+                this.classList.add('active');
+
+                // 3. Ocultar todas las secciones
+                sections.forEach(sec => sec.classList.remove('active-section'));
+                
+                // 4. Mostrar solo la sección correspondiente basada en el href (#id)
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).classList.add('active-section');
+            });
+        });
+    </script>
 </body>
 </html>
