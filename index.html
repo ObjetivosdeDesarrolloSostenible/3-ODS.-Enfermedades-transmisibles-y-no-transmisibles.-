@@ -76,7 +76,7 @@
         section { display: none; }
         section.active-section { display: block; }
 
-        /* Cuadro de Introducción (Inicio) */
+        /* Cuadro de Introducción (Inicio) y Sobre Mí */
         .intro-box { 
             background-color: #ffffff; 
             border-left: 4px solid #2563eb; /* Azul para acento */
@@ -87,6 +87,11 @@
         }
         .intro-box h3 { margin-top: 0; color: #1e293b; font-size: 14pt; }
         .intro-box p { margin-bottom: 15px; color: #475569; text-align: justify; }
+        
+        /* Borde verde específico para la sección personal */
+        .about-box {
+            border-left: 4px solid #047857;
+        }
 
         /* Tarjetas del Blog */
         h2 { font-size: 16pt; color: #047857; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px; margin-top: 40px; }
@@ -126,6 +131,7 @@
 </head>
 <body>
 
+    <!-- Barra de navegación interactiva -->
     <nav class="blog-nav">
         <div class="nav-container">
             <h2>BioHack</h2>
@@ -133,16 +139,19 @@
                 <li><a href="#inicio" id="btn-inicio" class="nav-btn active">Inicio</a></li>
                 <li><a href="#blog" id="btn-blog" class="nav-btn">Blog</a></li>
                 <li><a href="#formulario" id="btn-formulario" class="nav-btn">Formulario</a></li>
+                <li><a href="#autora" id="btn-autora" class="nav-btn">Sobre la Autora</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
+        <!-- Encabezado invariable -->
         <header class="header-banner">
             <h1>Bitácora de Salud y Bienestar</h1>
             <p>Monitoreo Clínico y Sintomatología • Compromiso ODS 3</p>
         </header>
 
+        <!-- SECCIÓN 1: INICIO (INTRODUCCIÓN AL ODS 3) -->
         <section id="inicio" class="active-section">
             <div class="intro-box">
                 <h3>El Desafío del ODS 3: Salud y Bienestar</h3>
@@ -158,6 +167,7 @@
             </div>
         </section>
 
+        <!-- SECCIÓN 2: BLOG (PATOLOGÍAS) -->
         <section id="blog">
             <h2>1. Patologías Transmisibles</h2>
             <div class="disease-card">
@@ -206,18 +216,36 @@
             </div>
         </section>
 
+        <!-- SECCIÓN 3: FORMULARIO INCRUSTADO -->
         <section id="formulario">
             <h2>Interacción y Evaluación</h2>
             <div class="form-wrapper">
+                <!-- Se incrusta la URL de Microsoft Forms provista -->
                 <iframe src="https://forms.office.com/Pages/ResponsePage.aspx?id=OIIr_ImSX0Kxt7JwA9cR80atxRa8ZsNAg-Z2thv4EbJURUlJNVhOQVo2TVRPWllXRUlZNE9YSlRQQi4u&classId=d347d6ca-0d6b-4bba-8b37-8f30945a6ccd&assignmentId=1b12497b-212a-45f0-b002-8a1253d82b27&submissionId=2e4f0e81-0552-a5ea-5268-dd5c2ee1c1e9" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
             </div>
         </section>
 
+        <!-- SECCIÓN 4: SOBRE LA AUTORA (NUEVA SUBPÁGINA) -->
+        <section id="autora">
+            <h2>Sobre la Creadora</h2>
+            <div class="intro-box about-box">
+                <h3>Julieta Pérez Brendel</h3>
+                <p>
+                    Mi nombre es Julieta Pérez Brendel. El desarrollo y la dedicación invertidos en este sitio web tienen como objetivo principal informar a los jóvenes y al público en general sobre la prevención de enfermedades transmisibles y no transmisibles, detallando sus mecanismos de contagio y desarrollo.
+                </p>
+                <p>
+                    En el ámbito personal, el interés por la nutrición ha sido una constante en mi vida desde que concluí la educación secundaria. Por ello, la elección de esta temática nace de una profunda inspiración que fusiona mis pasiones personales con mis metas académicas.
+                </p>
+            </div>
+        </section>
+
+        <!-- Pie de página unificado -->
         <footer class="footer">
             <p>Proyecto Escolar BioHack • Concienciación sobre el ODS 3 • Desarrollado con HTML, CSS y JS</p>
         </footer>
     </div>
 
+    <!-- Script de control para la navegación Single Page Application (SPA) -->
     <script>
         const buttons = document.querySelectorAll('.nav-btn');
         const sections = document.querySelectorAll('section');
